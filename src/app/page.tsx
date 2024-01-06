@@ -18,6 +18,7 @@ export default function Home() {
           <Link href='/products'>
             <Button>Browse Products</Button>
           </Link>
+          <Button variant='ghost'>Our quality products &rarr;</Button>
         </div>
       </div>
     </MaxWidthWrapper>
