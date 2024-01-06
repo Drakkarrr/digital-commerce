@@ -1,6 +1,9 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import Image from 'next/image';
 
 export default function Home() {
-  return <MaxWidthWrapper></MaxWidthWrapper>;
+  return (
+    <MaxWidthWrapper>
+      <h1>test</h1>
+    </MaxWidthWrapper>
+  );
 }
