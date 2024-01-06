@@ -1,6 +1,28 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { ArrowDownToLine, CheckCircle, Leaf } from 'lucide-react';
+
+const perks = [
+  {
+    name: 'Fast Delivery',
+    Icon: ArrowDownToLine,
+    description:
+      'Get your purchase be delivere to your home and use them right away.',
+  },
+  {
+    name: 'High Quality',
+    Icon: CheckCircle,
+    description:
+      'Every product on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.',
+  },
+  {
+    name: 'For the Platforms',
+    Icon: Leaf,
+    description:
+      "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
+  },
+];
 
 export default function Home() {
   return (
