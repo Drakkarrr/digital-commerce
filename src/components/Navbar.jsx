@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import { Icons } from './Icons';
+import NavItems from './NavItems';
 
 const Navbar = () => {
   return (
@@ -19,10 +20,7 @@ const Navbar = () => {
               </div>
 
               <div className='hidden z-50 lg:ml-8 lg:block lg:self-stretch'>
-                <p>Nav items here</p>
-                <p>Nav items here</p>
-                <p>Nav items here</p>
-                <p>Nav items here</p>
+                <NavItems />
               </div>
             </div>
           </div>
