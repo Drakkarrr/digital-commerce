@@ -60,6 +60,9 @@ export default function Home() {
                     {perk.icon && <perk.icon className='h-1/3 w-1/3 ' />}
                   </div>
                 </div>
+                <div className='mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6'>
+                  <h3>{perk.name}</h3>
+                </div>
               </div>
             ))}
           </div>
