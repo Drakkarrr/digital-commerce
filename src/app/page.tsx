@@ -6,19 +6,19 @@ import { ArrowDownToLine, CheckCircle, Leaf } from 'lucide-react';
 const perks = [
   {
     name: 'Fast Delivery',
-    Icon: ArrowDownToLine,
+    icon: ArrowDownToLine,
     description:
       'Get your purchase be delivere to your home and use them right away.',
   },
   {
     name: 'High Quality',
-    Icon: CheckCircle,
+    icon: CheckCircle,
     description:
       'Every product on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.',
   },
   {
     name: 'For the Platforms',
-    Icon: Leaf,
+    icon: Leaf,
     description:
       "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
   },
@@ -51,7 +51,17 @@ export default function Home() {
       <section className='border-t border-gray-200 bg-gray-50'>
         <MaxWidthWrapper className='py-20'>
           <div className='grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0'>
-            test
+            {perks.map((perk) => (
+              <div
+                key={perk.name}
+                className='text-center md:flex md:items-start md:text-left lg:block lg:text-center'>
+                <div className='justify-center flex md:flex-shink-0'>
+                  <div className='h-16 w-16 flex items-center justify-center rounded-full bg-blue-100'>
+                    {perk.icon && <perk.icon className='h-1/3 w-1/3 ' />}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </MaxWidthWrapper>
       </section>
