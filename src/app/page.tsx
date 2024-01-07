@@ -57,7 +57,7 @@ export default function Home() {
                 className='text-center md:flex md:items-start md:text-left lg:block lg:text-center'>
                 <div className='justify-center flex md:flex-shink-0'>
                   <div className='h-16 w-16 flex items-center justify-center rounded-full bg-blue-100'>
-                    {perk.icon && <perk.icon className='h-1/3 w-1/3 ' />}
+                    <perk.icon className='h-1/3 w-1/3 ' />
                   </div>
                 </div>
                 <div className='mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6'>
