@@ -1,7 +1,19 @@
-export const PRODUCT_CATEGORIES = [
+export type FeaturedProduct = {
+  name: string;
+  href: string;
+  imageSrc: string;
+};
+
+export type ProductCategory = {
+  label: string;
+  value: string;
+  featured: FeaturedProduct[];
+};
+
+export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     label: 'UI Kits',
-    value: 'ui_kits' as const,
+    value: 'ui_kits',
     featured: [
       {
         name: 'Editor picks',
@@ -22,7 +34,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     label: 'Icons',
-    value: 'icons' as const,
+    value: 'icons',
     featured: [
       {
         name: 'Favorite Icon Picks',
