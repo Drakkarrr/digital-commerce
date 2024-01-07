@@ -2,6 +2,7 @@ import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowDownToLine, CheckCircle, Leaf } from 'lucide-react';
+import Navbar from '@/components/Navbar';
 
 const perks = [
   {
@@ -28,6 +29,7 @@ export default function Home() {
   return (
     <>
       <MaxWidthWrapper>
+        <Navbar />
         <div className='py-20 mx-auto text-center flex flex-col items-center max-w-3xl'>
           <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
             The very best marketplace here on

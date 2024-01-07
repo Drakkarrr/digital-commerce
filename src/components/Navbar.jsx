@@ -1,6 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import MaxWidthWrapper from './MaxWidthWrapper';
-import { Link } from 'react-router-dom';
+import { Icons } from './Icons';
 
 const Navbar = () => {
   return (
@@ -12,8 +13,8 @@ const Navbar = () => {
               {/* TODE: Mobile navbar here */}
 
               <div className='ml-4 flex lg:ml-0'>
-                <Link to='/'>
-                  <span className='sr-only'>Workflow</span>
+                <Link href='/'>
+                  <Icons.logo className='w-10 h-10' />
                 </Link>
               </div>
             </div>
