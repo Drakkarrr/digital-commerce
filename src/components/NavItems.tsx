@@ -1,7 +1,8 @@
 'use client';
 
-import { PRODUCT_CATEGORIES } from '@/config';
 import React from 'react';
+import { PRODUCT_CATEGORIES } from '@/config';
+import NavItem from './NavItem';
 
 const NavItems = () => {
   const [active, setActive] = React.useState<null | number>(null);
@@ -12,7 +13,7 @@ const NavItems = () => {
           active === index ? setActive(null) : setActive(index);
         const isActive = active === index;
 
-        return <p key={index}>{category.label}</p>;
+        return <NavItem />;
       })}
     </div>
   );
