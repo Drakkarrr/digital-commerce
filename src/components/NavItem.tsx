@@ -38,6 +38,14 @@ const NavItem: React.FC<NavItemProps> = ({
           />
         </Button>
       </div>
+      {isOpen && (
+        <div
+          className={cn(
+            `absolute inset-x-0 top-full text-sm text-muted-foreground ${
+              !isAnyOpen && 'animate-in fade-in-10 slide-in-from-top-5'
+            }`
+          )}></div>
+      )}
     </div>
   );
 };
