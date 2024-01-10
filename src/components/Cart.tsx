@@ -13,7 +13,7 @@ import {
 } from './ui/sheet';
 import { cn, formatPrice } from '@/lib/utils';
 import Link from 'next/link';
-import { buttonVariants } from './ui/button';
+import { Button, buttonVariants } from './ui/button';
 import Image from 'next/image';
 
 const Cart = () => {
@@ -71,10 +71,22 @@ const Cart = () => {
             </div>
           </>
         ) : (
-          <div className='flex h-full flex-col items-center justify-center space-y-1'>
+          <div className='space-y-1 h-full flex-col items-center flex justify-center'>
             <div className='relative mb-4 h-60 w-60 text-muted-foreground'>
               <Image src='/hippo-empty-cart.png' fill alt='Empty Cart' />
             </div>
+            <div className='text-xl font-semibold'>Your cart is empty</div>
+            <SheetTrigger asChild>
+              <Link
+                href='/products'
+                className={buttonVariants({
+                  variant: 'link',
+                  size: 'sm',
+                  className: 'text-muted-foreground pt-2 text-sm',
+                })}>
+                <Button>Shop now</Button>
+              </Link>
+            </SheetTrigger>
           </div>
         )}
       </SheetContent>
