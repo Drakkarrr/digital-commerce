@@ -1,7 +1,8 @@
 'use client';
-import { Sheet, ShoppingCartIcon } from 'lucide-react';
+import { ShoppingCartIcon } from 'lucide-react';
 import React from 'react';
 import {
+  Sheet,
   SheetTrigger,
   SheetContent,
   SheetHeader,
