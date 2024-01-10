@@ -42,6 +42,10 @@ const Cart = () => {
                   <span className='flex-1'>Shipping Cost</span>
                   <span>Free</span>
                 </div>
+                <div className='flex'>
+                  <span className='flex-1'>Transaction Fee</span>
+                  <span>$5.00</span>
+                </div>
               </div>
             </div>
           </>
