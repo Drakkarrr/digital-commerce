@@ -21,16 +21,15 @@ const Cart = () => {
           0
         </span>
       </SheetTrigger>
-      {/* <SheetTrigger>Open</SheetTrigger>
-      <SheetContent className='w-[400px] sm:w-[540px]'>
-        <SheetHeader>
-          <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetContent className='flex w-full flex-col pr-0 sm:max-w-lg'>
+        <SheetHeader className='space-y-2.5 pr-6'>
+          <SheetTitle>Cart (0) </SheetTitle>
           <SheetDescription>
             This action cannot be undone. This will permanently delete your
             account and remove your data from our servers.
           </SheetDescription>
         </SheetHeader>
-      </SheetContent> */}
+      </SheetContent>
     </Sheet>
   );
 };
