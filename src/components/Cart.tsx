@@ -11,6 +11,7 @@ import {
 } from './ui/sheet';
 
 const Cart = () => {
+  const itemCount = 0;
   return (
     <Sheet>
       <SheetTrigger className='group -m-2 flex items-center p-2'>
@@ -25,11 +26,19 @@ const Cart = () => {
       <SheetContent className='flex w-full flex-col pr-0 sm:max-w-lg'>
         <SheetHeader className='space-y-2.5 pr-6'>
           <SheetTitle>Cart (0) </SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </SheetDescription>
         </SheetHeader>
+        {itemCount > 0 ? (
+          <>
+            <div className='flex w-full flex-col pr-6'>
+              {/* TODO: logic here */}
+              Your cart is empty.
+            </div>
+            <div className='space-y-4 pr-6'>
+              {/* <Separator/> */}
+              <br />
+            </div>
+          </>
+        ) : null}
       </SheetContent>
     </Sheet>
   );
