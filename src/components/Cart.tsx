@@ -1,6 +1,8 @@
 'use client';
 import { ShoppingCartIcon } from 'lucide-react';
 import React from 'react';
+import { Separator } from '@/components/ui/separator';
+
 import {
   Sheet,
   SheetTrigger,
@@ -11,7 +13,7 @@ import {
 } from './ui/sheet';
 
 const Cart = () => {
-  const itemCount = 0;
+  const itemCount = 10;
   return (
     <Sheet>
       <SheetTrigger className='group -m-2 flex items-center p-2'>
@@ -34,8 +36,7 @@ const Cart = () => {
               Your cart is empty.
             </div>
             <div className='space-y-4 pr-6'>
-              {/* <Separator/> */}
-              <br />
+              <Separator />
             </div>
           </>
         ) : null}
