@@ -24,7 +24,7 @@ const Navbar = () => {
                 <NavItems />
               </div>
               <div className='ml-auto flex items-center'>
-                <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 lg:bg-black'>
+                <div className='hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6 lg:bg-white'>
                   {user ? null : (
                     <Link
                       href='/sign-in'
@@ -34,7 +34,7 @@ const Navbar = () => {
                   )}
 
                   {user ? null : (
-                    <span className='h-6 bg-gray-600 w-px' aria-hidden='true' />
+                    <span className='h-6 bg-gray-200 w-px' aria-hidden='true' />
                   )}
 
                   {user ? (
