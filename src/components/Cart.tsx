@@ -9,11 +9,16 @@ import {
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetDescription,
+  SheetFooter,
 } from './ui/sheet';
+import { cn, formatPrice } from '@/lib/utils';
+import Link from 'next/link';
+import { buttonVariants } from './ui/button';
 
 const Cart = () => {
   const itemCount = 10;
+  const fee = 200;
+
   return (
     <Sheet>
       <SheetTrigger className='group -m-2 flex items-center p-2'>
@@ -44,9 +49,24 @@ const Cart = () => {
                 </div>
                 <div className='flex'>
                   <span className='flex-1'>Transaction Fee</span>
-                  <span>$5.00</span>
+                  <span>{formatPrice(fee)}</span>
+                </div>
+                <div className='flex'>
+                  <span className='flex-1'>Total</span>
+                  <span>{formatPrice(fee)}</span>
                 </div>
               </div>
+              <SheetFooter>
+                <SheetTrigger asChild>
+                  <Link
+                    href='/cart'
+                    className={buttonVariants({
+                      className: 'w-full',
+                    })}>
+                    Checkout
+                  </Link>
+                </SheetTrigger>
+              </SheetFooter>
             </div>
           </>
         ) : null}
