@@ -37,6 +37,12 @@ const Cart = () => {
             </div>
             <div className='space-y-4 pr-6'>
               <Separator />
+              <div className='space-y-1.5 text-sm'>
+                <div className='flex'>
+                  <span className='flex-1'>Shipping Cost</span>
+                  <span>Free</span>
+                </div>
+              </div>
             </div>
           </>
         ) : null}
