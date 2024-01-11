@@ -1,6 +1,7 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { getPayloadClient } from './get-payload';
+import { nextHandler } from './next-utils';
 
 dotenv.config();
 
@@ -17,9 +18,7 @@ const startServer = async () => {
     },
   });
 
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
+  app.use((req: Request, res: Response) => nextHandler(req, res));
 };
 
 startServer();
