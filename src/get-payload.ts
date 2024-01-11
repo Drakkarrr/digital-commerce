@@ -1,5 +1,6 @@
-import dotenv from 'dotenv';
+import payload from 'payload';
 import path from 'path';
+import dotenv from 'dotenv';
 import { InitOptions } from 'payload/config';
 
 dotenv.config({
@@ -22,4 +23,14 @@ if (!cache) {
 export const getPayloadClient = async ({ initOptions }: Args = {}) => {
   if (!process.env.PAYLOAD_SECRET)
     throw new Error('PAYLOAD_SECRET is not set in .env file');
+
+  if (cache.client) return cache.client;
+
+  if (!cache.promise) {
+    cache.promise = payload.init({
+      secret: process.env.PAYLOAD_SECRET,
+      local: initOptions?.express ? true : false,
+      ...initOptions,
+    });
+  }
 };
