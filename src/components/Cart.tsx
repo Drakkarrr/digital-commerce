@@ -17,7 +17,7 @@ import { Button, buttonVariants } from './ui/button';
 import Image from 'next/image';
 
 const Cart = () => {
-  const itemCount = 0;
+  const itemCount = 5;
   const fee = 200;
 
   return (
@@ -28,12 +28,12 @@ const Cart = () => {
           aria-hidden='true'
         />
         <span className='ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-400'>
-          0
+          {itemCount}
         </span>
       </SheetTrigger>
       <SheetContent className='flex w-full flex-col pr-0 sm:max-w-lg'>
         <SheetHeader className='space-y-2.5 pr-6'>
-          <SheetTitle>Cart (0) </SheetTitle>
+          <SheetTitle>Cart ({itemCount}) </SheetTitle>
         </SheetHeader>
         {itemCount > 0 ? (
           <>
