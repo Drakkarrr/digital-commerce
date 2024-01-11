@@ -33,4 +33,13 @@ export const getPayloadClient = async ({ initOptions }: Args = {}) => {
       ...initOptions,
     });
   }
+
+  try {
+    cache.client = await cache.promise;
+  } catch (error: unknown) {
+    cache.promise = null;
+    throw error;
+  }
+
+  return cache.client;
 };
