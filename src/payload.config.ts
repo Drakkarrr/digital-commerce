@@ -1,9 +1,14 @@
-import path from 'path';
 import dotenv from 'dotenv';
 import { buildConfig } from 'payload/config';
 import { webpackBundler } from '@payloadcms/bundler-webpack';
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
 import { slateEditor } from '@payloadcms/richtext-slate';
+import path from 'path';
+// import { Users } from './collections/Users'
+// import { Products } from './collections/Products/Products'
+// import { Media } from './collections/Media'
+// import { ProductFiles } from './collections/ProductFile'
+// import { Orders } from './collections/Orders'
 
 dotenv.config({
   path: path.resolve(__dirname, '../.env'),
@@ -17,10 +22,10 @@ export default buildConfig({
     admin: '/sell',
   },
   admin: {
-    user: 'users',
+    user: '',
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '- DigitalCommerce',
+      titleSuffix: '- DigitalHippo',
       favicon: '/favicon.ico',
       ogImage: '/thumbnail.jpg',
     },
