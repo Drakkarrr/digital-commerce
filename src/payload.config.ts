@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
 import { buildConfig } from 'payload/config';
+import dotenv from 'dotenv';
 import { webpackBundler } from '@payloadcms/bundler-webpack';
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
 import { slateEditor } from '@payloadcms/richtext-slate';
@@ -22,7 +22,7 @@ export default buildConfig({
     admin: '/sell',
   },
   admin: {
-    user: '',
+    user: 'users',
     bundler: webpackBundler(),
     meta: {
       titleSuffix: '- DigitalHippo',
