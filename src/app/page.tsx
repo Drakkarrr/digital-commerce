@@ -1,24 +1,25 @@
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import ProductReel from '@/components/ProductReel';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { ArrowDownToLine, CheckCircle, Leaf } from 'lucide-react';
+import Link from 'next/link';
 
 const perks = [
   {
-    name: 'Fast Delivery',
-    icon: ArrowDownToLine,
+    name: 'Instant Delivery',
+    Icon: ArrowDownToLine,
     description:
-      'Get your purchase be delivere to your home and use them right away.',
+      'Get your assets delivered to your email in seconds and download them right away.',
   },
   {
-    name: 'High Quality',
-    icon: CheckCircle,
+    name: 'Guaranteed Quality',
+    Icon: CheckCircle,
     description:
-      'Every product on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.',
+      'Every asset on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.',
   },
   {
-    name: 'For the Platforms',
-    icon: Leaf,
+    name: 'For the Planet',
+    Icon: Leaf,
     description:
       "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
   },
@@ -30,22 +31,26 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className='py-20 mx-auto text-center flex flex-col items-center max-w-3xl'>
           <h1 className='text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl'>
-            The very best marketplace here on
-            <span className='text-blue-600'> Milky Way!</span>.
+            Your marketplace for high-quality{' '}
+            <span className='text-blue-600'>digital assets</span>.
           </h1>
           <p className='mt-6 text-lg max-w-prose text-muted-foreground'>
-            Welcome to DigitalCommerce. Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Odit optio illum non vero maxime. Dolore.
+            Welcome to DigitalHippo. Every asset on our platform is verified by
+            our team to ensure our highest quality standards.
           </p>
           <div className='flex flex-col sm:flex-row gap-4 mt-6'>
-            <Link href='/products'>
-              <Button>Browse Products</Button>
+            <Link href='/products' className={buttonVariants()}>
+              Browse Trending
             </Link>
-            <Button variant='ghost'>Our quality products &rarr;</Button>
+            <Button variant='ghost'>Our quality promise &rarr;</Button>
           </div>
         </div>
 
-        {/* List of products here */}
+        <ProductReel
+          query={{ sort: 'desc', limit: 4 }}
+          href='/products?sort=recent'
+          title='Brand new'
+        />
       </MaxWidthWrapper>
 
       <section className='border-t border-gray-200 bg-gray-50'>
@@ -55,11 +60,12 @@ export default function Home() {
               <div
                 key={perk.name}
                 className='text-center md:flex md:items-start md:text-left lg:block lg:text-center'>
-                <div className='justify-center flex md:flex-shink-0'>
-                  <div className='h-16 w-16 flex items-center justify-center rounded-full bg-blue-100'>
-                    <perk.icon className='h-1/3 w-1/3 ' />
+                <div className='md:flex-shrink-0 flex justify-center'>
+                  <div className='h-16 w-16 flex items-center justify-center rounded-full bg-blue-100 text-blue-900'>
+                    {<perk.Icon className='w-1/3 h-1/3' />}
                   </div>
                 </div>
+
                 <div className='mt-6 md:ml-4 md:mt-0 lg:ml-0 lg:mt-6'>
                   <h3 className='text-base font-medium text-gray-900'>
                     {perk.name}
